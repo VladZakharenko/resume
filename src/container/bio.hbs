@@ -1,0 +1,82 @@
+<div>
+
+    <section>
+        {{> title data=name big="true"}}
+        <hr>
+        <p><b>Birth: </b>{{birthplace}}, <i>{{birthdate}}</i></p>
+        <p><b>Deth: </b>{{deathplace}}, <i>{{deathdate}}</i></p>
+        <p><b>Nationality: </b>{{nationality}}</p>
+        <p><b>Occupation: </b>{{occupation}}</p>
+        <br>
+        <p>{{> ul-li sItemsName='Known for: ' sItems=known_for}}</p>
+        <br>
+        <div>
+            <b>Education</b>
+            <ul>
+                {{#each education}}
+                <li>
+                    <p>Degree: {{degree}}</p>
+                    <p>Field: {{field}}</p>
+                    <p>Institution: {{institution}}, {{year}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <b>Notable publications</b>
+            <ul>
+                {{#each notable_publications}}
+                <li>
+                    <p><b>{{title}}, </b><i>{{year}}</i></p>
+                    <p>Publisher: {{publisher}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <b>Рartners</b>
+            <ul>
+                {{#each partners}}
+                <li>
+                    <p><b>{{name}} </b></p>
+                    <p>Relationship: {{relationship}}, <i>{{years}}</i></p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <b>Awards</b>
+            <ul>
+                {{#each awards}}
+                <li>
+                    <p><b>{{title}}, <i>{{year}}</i> </b></p>
+                    <p>{{description}} </p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        {{!-- <p>{{> ul-li-object sItemsName='Education: ' sItems=education sParam1="Degree" sParam1_=education.degree
+            sParam2='Field'
+            sParam2_=field sParam3='Istitution' sParam3_=institution}}</p> --}}
+
+
+        <p>{{> ul-li sItemsName='Influences: ' sItems=influences}}</p>
+        <br>
+        <p>{{> ul-li sItemsName='Influenced: ' sItems=influenced}}</p>
+        <br>
+        <p>{{> ul-li sItemsName='Quotes: ' sItems=quotes}}</p>
+
+
+    </section>
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
