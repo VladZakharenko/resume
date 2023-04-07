@@ -1,0 +1,76 @@
+<div>
+    {{#with program.excursion}}
+    <section>
+
+        {{> title data=name big="true"}}
+        <p>{{location.city}}, {{location.country}}, <i>{{date}}</i></p>
+        <div>
+            <hr>
+            {{> title data="Programm" }}
+            <hr>
+            <ul>
+                {{#each program}}
+                <li>
+                    <p><b>{{name}}</b></p>
+                    <p>Type: <i>{{type}}</i></p>
+                    <p>Duration: {{duration}}</p>
+                    <br>
+                    <p><u>Details</u></p>
+                    {{#with details}}
+                    <p><b>{{museum.name}}, </b><i>{{museum.location.address}}, {{museum.location.city}},
+                            {{museum.location.country}}</i></p>
+
+
+                    {{#with museum}}
+                    {{#if exhibits}}<p><u>Exhibits</u></p>
+                    <ul>
+                        {{#each exhibits}}
+                        <li>
+                            <p><b>{{name}}</b> {{#if audio_guide}}<i> (Audio guide)</i>{{/if}}</p>
+                            {{#if artist}}
+                            <p>By
+                                {{artist}}</p>{{/if}}
+                            <p><i>{{description}}</i></p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                    {{/with}}
+
+                    {{#if performers}}<p><u>Performers</u></p>
+                    <ul>
+                        {{#each performers}}
+                        <li>
+                            <p><b>{{name}}</b> </p>
+                            <p><i>{{type}}</i></p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+
+
+                    {{#with guide}}
+                    <p>Guide: {{name}}, {{language}}, <i>Rating: {{rating}}</i></p>
+                    {{/with}}
+
+
+                    {{/with}}
+
+                    <br>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+
+
+        <hr>
+    </section>
+    {{/with}}
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
