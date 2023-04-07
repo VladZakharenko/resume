@@ -1,0 +1,86 @@
+<div>
+    {{> title data='Program languages' big="true"}}
+    <hr>
+    {{#with web}}
+    <section>
+        <ul>
+            {{#each languages}}
+            <li>
+                {{> title data=name}}
+                <p>Version: {{version}}</p>
+                <p><i>{{description}}</i></p>
+
+                {{#if properties}}
+                <p>Properties: </p>
+                <ul>
+                    {{#each properties}}
+                    <li>
+                        <p><b>{{name}}</b> -- <i>{{description}}</i></p>
+                        <ul>
+                            {{#each values}}
+                            <li>
+                                <p><b>{{value}}</b> -- <i>{{description}}</i></p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                {{#if functions}}
+                <p>Functions: </p>
+                <ul>
+                    {{#each functions}}
+                    <li>
+                        <p><b>{{name}}</b> -- <i>{{description}}</i></p>
+                        <ul>
+                            <p>Parameters:</p>
+                            {{#each parameters}}
+                            <li>
+                                <p><b>{{name}}</b> -- {{type}} -- <i>{{description}}</i></p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                <ul>
+                    {{#each elements}}
+                    <li>
+                        <p>{{name}}</p>
+                        <p><i>{{description}}</i></p>
+                        {{#if attributes}}
+                        <p>Attribute: </p>
+                        <ul>
+                            {{#each attributes}}
+                            <li>
+                                <p><b>{{name}}</b> -- <i>{{description}}</i></p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+
+
+
+
+                    </li>
+                    {{/each}}
+                </ul>
+                <br>
+            </li>
+            {{/each}}
+
+        </ul>
+
+    </section>
+    {{/with}}
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
