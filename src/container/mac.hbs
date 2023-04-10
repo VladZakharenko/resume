@@ -1,0 +1,100 @@
+<div>
+    {{> title data=name big="true"}}
+    <hr>
+
+    <section>
+        <p><i>{{description}}</i></p>
+        <p>ціна: {{price}}</p>
+        <p>категорія: {{category}}</p>
+
+        <br>
+        <p><b>Особливості</b></p>
+        {{#with features}}
+        <br>
+        {{#with processor}}
+        <p><b>Центральний процесор:</b> {{brand}}, {{model}}, {{speed}} {{cores}} ядер, кеш {{cache}}</p>
+        {{/with}}
+
+        {{#with memory}}
+        <p><b>Оперативна пам’ять:</b> {{type}}, {{size}}, {{speed}}</p>
+        {{/with}}
+
+        {{#with storage}}
+        <p><b>Накопичувач:</b> {{type}}, {{size}}</p>
+        {{/with}}
+
+        {{#with display}}
+        <p><b>Дисплей:</b> {{size}}, {{resolution}},
+            {{technology}},
+            кольоровий простір {{color_space}},
+            яскравість {{brightness}},
+            {{refresh_rate}}</p>
+        {{/with}}
+
+        {{#with graphics}}
+        <p><b>Графічний адаптер:</b> {{brand}},
+            {{model}},
+            {{memory}}</p>
+        {{/with}}
+
+
+        <p><b>Зовнішні порти:</b></p>
+        <ul>
+            {{#each ports}}
+            <li>
+                <p><b>{{type}}</b></p>
+                <p>Кількість {{count}}</p>
+                {{#if features}}
+                <ul>
+                    {{#each features}}
+                    <li>
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+                <br>
+            </li>
+            {{/each}}
+        </ul>
+        <br>
+        {{#with battery}}
+        <p><b>Батарея:</b> {{type}},
+            {{capacity}},
+            {{life}}</p>
+        {{/with}}
+
+        <br>
+        <p><b>Фізичні дані</b></p>
+        <p>Вага: {{weight}}</p>
+        {{#with dimensions}}
+        <p>Розмір: {{height}} * {{width}} * {{depth}}</p>
+        {{/with}}
+
+        <br>
+        <p><b>Операційна система:</b> {{operating_system}}</p>
+
+        <br>
+        <p><b>Аксесуари:</b></p>
+        <ul>
+            {{#each accessories}}
+            <li>
+                <p>{{name}} <i>({{price}} usd)</i></p>
+                {{/each}}
+            </li>
+        </ul>
+
+
+
+        {{/with}}
+
+
+    </section>
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
