@@ -1,0 +1,50 @@
+<div>
+    {{> title data=name big="true"}}
+    <hr>
+
+    <section>
+        <p><i>{{description}}</i></p>
+        <br>
+        <p>Рік створення: <b>{{history.year}}</b></p>
+        <p>Творець: <b>{{history.founder}}</b></p>
+        <br>
+        <p>{{> ul-li sItemsName='Типи змінних ' sItems=types}}</p>
+        <br>
+        <p>Синтаксис</p>
+        {{#with syntax}}
+        <p>{{> ul-li sItemsName='Змінні ' sItems=variables}}</p>
+        <p>{{> ul-li sItemsName='Функції ' sItems=functions}}</p>
+        <p>{{> ul-li sItemsName='Умовні оператори ' sItems=conditionals}}</p>
+        <p>{{> ul-li sItemsName='Цикли ' sItems=loops}}</p>
+        <p>{{> ul-li sItemsName='Класи ' sItems=classes}}</p>
+        {{/with}}
+        <br>
+        <p>{{> ul-li sItemsName='Особливості ' sItems=features}}</p>
+        <br>
+        <p>{{> ul-li sItemsName='Бібліотеки ' sItems=libraries}}</p>
+        <br>
+        <p>{{> ul-li sItemsName='Інструменти ' sItems=tools}}</p>
+        <br>
+        <p><b>Співтовариство</b></p>
+
+        <ul>
+            {{#each community}}
+            <li>
+                <p>{{name}}<i>, ({{type}})</i></p>
+            </li>
+            {{/each}}
+        </ul>
+
+
+
+
+
+    </section>
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
