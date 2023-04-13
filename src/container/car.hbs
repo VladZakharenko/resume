@@ -1,0 +1,107 @@
+<div>
+    {{> title data='Cars' big="true"}}
+    <hr>
+
+    <section>
+        <p>{{make}} <b><i>{{model}}</i></b>, <i>{{year}}</i>, color -- {{color}}</p>
+        <br>
+        <p><b>Особливості</b></p>
+        <br>
+        {{#with features}}
+        {{#with interior}}
+        <p><b><i>Інтер’єр</i></b></p>
+        <p><b>Сидіння: </b>{{seats.material}}, {{seats.color}}, {{#if seats.heated}}з підгрівом{{/if}}, {{#if
+            seats.ventilated}}з вентиляцією{{/if}},
+        </p>
+        <p><b>Передня панель: </b>{{dashboard.material}}, {{dashboard.color}}, Дисплей {{dashboard.display.type}}
+            {{dashboard.display.size}} дюймів ({{dashboard.display.resolution}}), {{#if dashboard.display.touchscreen}}
+            сенсорний {{/if}}
+        </p>
+        {{#with audio}}
+        <p><b>Аудіо: </b>{{system}}, {{speakers}} динаміків, {{#if subwoofer}}
+            Сабвуфер ,{{/if}} {{#if bluetooth}}
+            Блютус ,{{/if}} {{#if USB}}
+            USB {{/if}}
+        </p>
+        {{/with}}
+        {{/with}}
+        <br>
+        {{#with exterior}}
+        <p><b><i>Екстер’єр</i></b></p>
+        {{#with wheels}}
+
+        <p><b>Колеса: </b>{{size}} дюймів, {{type}}, {{color}}</p>
+
+        {{/with}}
+        {{#with headlights}}
+
+        <p><b>Світло: </b>{{type}}, яскравість-{{brightness}}, {{#if automatic}}
+            автоматичне {{/if}}</p>
+
+        {{/with}}
+        {{/with}}
+        {{#with sunroof}}
+
+        <p><b>Криша: </b>{{type}}, розмір-{{brightness}}, {{#if automatic}}
+            автоматична {{/if}}</p>
+
+        {{/with}}
+
+        <br>
+        {{#with safety}}
+        <p><b><i>Безпека</i></b></p>
+        {{#with airbags}}
+        <p><b>Подушки безпеки: </b> {{#if front}}
+            передні - {{front}}, {{/if}}{{#if side}}
+            бокові- {{side}}, {{/if}}{{#if knee}}
+            ножні- {{knee}}, {{/if}}{{#if rear}}
+            задні - {{rear}} {{/if}}</p>
+        </p>
+        {{/with}}
+
+        {{#with assistance}}
+        <p><b>Допомога водію: </b> {{#if blind_spot_monitoring}}
+            Контроль мертвих зон, {{/if}}{{#if rear_cross_traffic_alert}}
+            Контроль зустрічного транспорту, {{/if}}{{#if lane_departure_warning}}
+            Контроль полоси руху, {{/if}}{{#if adaptive_cruise_control}}
+            Адаптивний круіз-контроль{{/if}}{{#if collision_warning}}
+            Контроль слизької дороги{{/if}}.</p>
+        </p>
+        {{/with}}
+        {{/with}}
+        <br>
+        {{/with}}
+        {{#with engine}}
+        <p><b><i>Двигун</i></b></p>
+        <P>Тип: {{type}}, Displacement {{displacement}}, {{horsepower}} кінських сил, Крутний момент - {{torque}},
+            Коробка передач: {{transmission.gears}}-ступінчаста, {{transmission.type}}</P>
+
+        {{/with}}
+        <br>
+        {{#with fuel_economy}}
+        <p><b><i>Витрата пального</b> (літрів на 100 км)</i></p>
+        <P>Місто: {{city}}, Шосе: {{highway}}, Комбінований: {{combined}},</P>
+
+        {{/with}}
+
+        <br>
+        {{#with price}}
+        <p><b><i>Ціна</b></i></p>
+        <P>Базова: {{base}}</P>
+        <P>Доплата за відстань: {{destination}}</P>
+        <P>Опції: Навігація ({{options.navigation}}), Криша ({{options.moonroof}}), Доплата за
+            колір ({{options.premium_paint}})
+        </p>
+
+        <P><strong>Загальна вартість: {{total}}</strong></P>
+
+        {{/with}}
+
+    </section>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
