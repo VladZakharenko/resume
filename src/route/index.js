@@ -703,101 +703,114 @@ router.get('/web', function (req, res) {
   })
 })
 
-
-router.get('/mac', function (req, res) {
+router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('mac', {
+  res.render('car', {
     layout: 'basic',
 
     page: {
-      title: 'Resume | Mac',
+      title: 'Resume | Car',
     },
 
-    name: 'Apple MacBook Pro',
-    description: 'The ultimate notebook for power users',
-    price: 1999.99,
-    category: 'Computers & Tablets',
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
     features: {
-      processor: {
-        brand: 'Intel',
-        model: 'Core i9',
-        speed: '2.3 GHz',
-        cores: 8,
-        cache: '16 MB',
-      },
-      memory: {
-        type: 'DDR4',
-        size: '32 GB',
-        speed: '2666 MHz',
-      },
-      storage: {
-        type: 'SSD',
-        size: '1 TB',
-      },
-      display: {
-        size: '16 inches',
-        resolution: '3072x1920',
-        technology: 'Retina',
-        color_space: 'P3',
-        brightness: '500 nits',
-        refresh_rate: '60 Hz',
-      },
-      graphics: {
-        brand: 'AMD',
-        model: 'Radeon Pro 5500M',
-        memory: '4 GB GDDR6',
-      },
-      ports: [
-        {
-          type: 'Thunderbolt 3',
-          count: 4,
-          features: [
-            'Charging',
-            'DisplayPort',
-            'Thunderbolt (up to 40 Gbps)',
-            'USB 3.1 Gen 2 (up to 10 Gbps)',
-          ],
+      interior: {
+        seats: {
+          material: 'leather',
+          color: 'black',
+          heated: true,
+          ventilated: true,
         },
-        {
-          type: 'HDMI',
-          count: 1,
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
         },
-      ],
-      battery: {
-        type: 'Lithium Polymer',
-        capacity: '100 Wh',
-        life: 'Up to 11 hours',
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
       },
-      weight: '4.3 pounds',
-      dimensions: {
-        height: '0.64 inch',
-        width: '14.09 inches',
-        depth: '9.68 inches',
+      exterior: {
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
       },
-      operating_system: 'macOS',
-      accessories: [
-        {
-          name: 'Apple Magic Keyboard',
-          price: 99.99,
+      safety: {
+        airbags: {
+          front: 2,
+          side: 2,
+          knee: 2,
+          rear: 2,
         },
-        {
-          name: 'Apple Magic Mouse 2',
-          price: 79.99,
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
         },
-        {
-          name: 'USB-C to USB Adapter',
-          price: 19.99,
-
-
+      },
+    },
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-
     layout: 'basic',
 
     page: {
@@ -954,7 +967,6 @@ router.get('/facebook', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 
 router.get('/task31', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1215,9 +1227,6 @@ router.get('/task31', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
-
-
 router.get('/js', function (req, res) {
   res.render('js', {
     layout: 'basic',
@@ -1298,22 +1307,13 @@ router.get('/js', function (req, res) {
   })
 })
 
-
-
 // ================================================================
-
 
 router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
-    layout: 'basic_total',
-
-    page: {
-      title: 'Resume | Task21',
-    },
-
     heading: {
       main: {
         title: 'JavaScript',
@@ -1372,7 +1372,10 @@ router.get('/task21', function (req, res) {
           url: 'https://getbootstrap.com/',
         },
       ],
-
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 
 router.get('/task22', function (req, res) {
   // res.render генерує нам HTML сторінку
