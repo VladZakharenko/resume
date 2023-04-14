@@ -1,0 +1,118 @@
+<section class="p-2 m-2">
+    <div class="card">
+        {{#with navigation}}
+        <ul class="nav">
+            {{#each links}}
+            <li class="nav-item">
+                <a class="nav-link  {{#if @last}} disabled {{/if}} mx-3 " href={{href}}>{{text}}</a>
+            </li>
+            {{/each}}
+        </ul>
+        {{/with}}
+    </div>
+
+    <div class="row my-5">
+        {{#with newsBlock}}
+        <h3 class="text-center">{{title}}</h3>
+
+        {{#each cards}}
+        <div class="col-3 my-2">
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <h5 class="cart-title">{{title}}
+                        {{#if isTop}}
+                        <span class="badge text-bg-danger">Топ</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge text-bg-success">Нова</span>
+                        {{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        {{/with}}
+    </div>
+    <hr>
+
+    <div class="row">
+        {{#with goodsBlock}}
+
+        <div class="nav nav-tabs m-4">
+            {{#each tabs}}
+            <a class="nav-item nav-link mx-3 {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}"
+                href="#">
+                {{text}}</a>
+            {{/each}}
+        </div>
+
+    </div>
+
+    <div class="row g-3">
+        {{#each cards}}
+        <div class="col-4 my-2">
+            <div class="card">
+                <img class="card-img-top" src={{{image}}} alt={{title}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <span class="badge text-bg-warning">HOT</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge text-bg-success">Новe</span>
+                        {{/if}}
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                    <a></a> </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr>
+
+    {{#with subscribe}}
+    <div class="row g-3 p-2">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <h2 class="card-title">{{header}}</h2>
+                <p class="card-text">{{description}}</p>
+                {{#each buttons}}
+                <a class="btn btn-primary" href={{link}}>{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+    <hr>
+
+    {{#with service}}
+    <div class="row g-3 p-2">
+        <div class="card text-bg-success text-center">
+            <div class="card-body">
+                <h2 class="card-title">{{title}}</h2>
+                <p class="card-text">{{description}}</p>
+                {{#each buttons}}
+                <a class="btn btn-primary" href={{link}}>{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <hr>
+
+    <div class="row d-3">
+        {{#each footer}}
+        <div class="nav">
+            {{#each this}}
+            <a class="btn btn-link col-2 nav-item nav-link " href={{link}}>{{text}}</a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+</section>
