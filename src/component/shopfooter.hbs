@@ -1,0 +1,12 @@
+<div class="row d-3 m-3">
+    {{#each footer}}
+    <ol class="nav">
+        {{#each this}}
+        <li class="btn btn-link col-2 nav-item nav-link {{#if @last}} disabled{{/if}}">
+            <a href={{link}}>{{text}}</a>
+
+        </li>
+        {{/each}}
+    </ol>
+    {{/each}}
+</div>
