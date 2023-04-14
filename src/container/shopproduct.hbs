@@ -78,7 +78,16 @@
         <div class="card">
             <div class="card-body">
                 {{#each actionList}}
-                <button class="btn btn-primary col-2 me-3">{{name}}</button>
+                <button class="btn 
+                {{#if isWarning}} btn-warning
+                {{/if}}
+                {{#if isError}} btn-outline-danger
+                {{/if}}
+                {{#if isSuccess}} btn-success
+                {{/if}}
+                {{#if isGood}} btn-outline-success
+                {{/if}}
+                col-2 me-3">{{name}}</button>
                 {{/each}}
             </div>
         </div>
