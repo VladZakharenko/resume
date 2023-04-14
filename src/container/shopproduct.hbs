@@ -1,12 +1,6 @@
 <section class="p-2 m-2">
 
-    <ol class="breadcrumb m-3">
-        {{#each breadcrumb}}
-        <li class="breadcrumb-item {{#if @last}} active {{else}} {{/if}}">
-            {{#if @last}} {{else}} <a href={{url}}>{{/if}} {{name}}</a>
-        </li>
-        {{/each}}
-    </ol>
+    {{> breadcrumb breadcrumb=breadcrumb}}
 
 
     {{#with productData}}
