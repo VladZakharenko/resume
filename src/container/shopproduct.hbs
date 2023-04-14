@@ -1,10 +1,6 @@
 <section class="p-2 m-2">
 
-    <div class="breadcrumb m-3">
-        {{#each breadcrumb}}
-        <a class="breadcrumb-item" href={{url}}>{{name}}</a>
-        {{/each}}
-    </div>
+    {{> breadcrumb breadcrumb=breadcrumb}}
 
     {{#with productData}}
     <div class="row my-3">
