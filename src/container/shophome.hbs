@@ -1,12 +1,14 @@
 <section class="p-2 m-2">
-    <div class="card p-3">
-        <div clas="nav">
-            {{#with navigation}}
+    <div class="card">
+        {{#with navigation}}
+        <ul class="nav">
             {{#each links}}
-            <a class="nav-item mx-3" href={{href}}>{{text}}</a>
+            <li class="nav-item">
+                <a class="nav-link  {{#if @last}} disabled {{/if}} mx-3 " href={{href}}>{{text}}</a>
+            </li>
             {{/each}}
-            {{/with}}
-        </div>
+        </ul>
+        {{/with}}
     </div>
 
     <div class="row my-5">
@@ -107,7 +109,7 @@
         {{#each footer}}
         <div class="nav">
             {{#each this}}
-            <a class="btn btn-link col-2 nav-item nav-link" href={{link}}>{{text}}</a>
+            <a class="btn btn-link col-2 nav-item nav-link " href={{link}}>{{text}}</a>
             {{/each}}
         </div>
         {{/each}}
