@@ -1,10 +1,13 @@
 <section class="p-2 m-2">
 
-    <div class="breadcrumb m-3">
+    <ol class="breadcrumb m-3">
         {{#each breadcrumb}}
-        <a class="breadcrumb-item" href={{url}}>{{name}}</a>
+        <li class="breadcrumb-item {{#if @last}} active {{else}} {{/if}}">
+            {{#if @last}} {{else}} <a href={{url}}>{{/if}} {{name}}</a>
+        </li>
         {{/each}}
-    </div>
+    </ol>
+
 
     {{#with productData}}
     <div class="row my-3">
