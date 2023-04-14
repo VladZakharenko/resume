@@ -1,0 +1,106 @@
+<section class="p-2 m-2">
+
+    <div class="breadcrumb m-3">
+        {{#each breadcrumb}}
+        <a class="breadcrumb-item" href={{url}}>{{name}}</a>
+        {{/each}}
+    </div>
+
+    {{#with productData}}
+    <div class="row my-3">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top" src={{{img}}} alt={{info.title}}>
+                    {{#with info}}
+                    <h5 class="cart-title mt-3">{{title}} </h5>
+                    <p class="card-text">{{about}}</p>
+                    <h4 class="card-title">{{price}}</h4>
+                    {{#each category}}
+                    {{#if isHot}}
+                    <span class="badge text-bg-warning ">{{name}}</span>
+                    {{/if}}
+                    {{#if isNew}}
+                    <span class="badge text-bg-primary">{{name}}</span>
+                    {{/if}}
+                    {{#if isBonus}}
+                    <span class="badge text-bg-info">{{name}}</span>
+                    {{/if}}
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-5 ms-5">
+            {{#with item}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        {{#each head}}
+                        <th>
+                            {{this}}
+                        </th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each body}}
+                    <tr>
+                        {{#each this}}
+                        <td>{{this}}</td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/with}}
+
+            {{#with param}}
+            <ul class="list-group my-5">
+                <li class="list-group-item text-bg-secondary">{{title}}</li>
+                {{#each list}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/with}}
+
+            {{#with alert}}
+            {{#if isError}}
+            <p class="alert alert-danger"><b>{{text}}</b></p>
+            {{/if}}
+        </div>
+        {{/with}}
+    </div>
+
+
+    <div class="col-12 g-4">
+        <div class="card">
+            <div class="card-body">
+                {{#each actionList}}
+                <button class="btn btn-primary col-2 me-3">{{name}}</button>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-4">
+    {{/with}}
+
+
+    <div class="my-5">
+        {{#with goodsOtherBlock}}
+        {{> shopcard card=card}}
+        {{/with}}
+    </div>
+
+    <hr class="my-4">
+
+    {{> shopaction service=service}}
+
+    <hr class="my-4">
+
+
+
+
+</section>

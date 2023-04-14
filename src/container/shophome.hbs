@@ -1,13 +1,4 @@
 <section class="p-2 m-2">
-    <div class="card p-3">
-        <div clas="nav">
-            {{#with navigation}}
-            {{#each links}}
-            <a class="nav-item mx-3" href={{href}}>{{text}}</a>
-            {{/each}}
-            {{/with}}
-        </div>
-    </div>
 
     <div class="row my-5">
         {{#with newsBlock}}
@@ -48,28 +39,13 @@
 
     </div>
 
-    <div class="row g-3">
-        {{#each cards}}
-        <div class="col-4 my-2">
-            <div class="card">
-                <img class="card-img-top" src={{{image}}} alt={{title}}>
-                <div class="card-body">
-                    <h5 class="card-title">{{title}}
-                        {{#if isHot}}
-                        <span class="badge text-bg-warning">HOT</span>
-                        {{/if}}
-                        {{#if isNew}}
-                        <span class="badge text-bg-success">Новe</span>
-                        {{/if}}
-                    </h5>
-                    <p class="card-text">{{description}}</p>
-                    <a></a> </a>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </div>
+    {{> shopcard card=card}}
+
+
+
     {{/with}}
+
+
     <hr>
 
     {{#with subscribe}}
@@ -87,30 +63,8 @@
     {{/with}}
     <hr>
 
-    {{#with service}}
-    <div class="row g-3 p-2">
-        <div class="card text-bg-success text-center">
-            <div class="card-body">
-                <h2 class="card-title">{{title}}</h2>
-                <p class="card-text">{{description}}</p>
-                {{#each buttons}}
-                <a class="btn btn-primary" href={{link}}>{{text}}</a>
-                {{/each}}
-            </div>
-        </div>
-    </div>
-    {{/with}}
+    {{> shopaction service=service}}
 
     <hr>
-
-    <div class="row d-3">
-        {{#each footer}}
-        <div class="nav">
-            {{#each this}}
-            <a class="btn btn-link col-2 nav-item nav-link" href={{link}}>{{text}}</a>
-            {{/each}}
-        </div>
-        {{/each}}
-    </div>
 
 </section>

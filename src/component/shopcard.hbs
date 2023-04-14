@@ -1,0 +1,19 @@
+<div class="row my-3">
+    {{#each cards}}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img-top" src={{{image}}} alt={{info.title}}>
+                <h5 class="cart-title mt-3">{{title}} </h5>
+                <p class="card-text">{{description}}</p>
+                {{#if isHot}}
+                <span class="badge text-bg-warning ">HOT</span>
+                {{/if}}
+                {{#if isNew}}
+                <span class="badge text-bg-primary">NEW</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
