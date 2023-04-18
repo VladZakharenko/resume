@@ -1,12 +1,14 @@
 <div class="row d-3 m-3">
-    {{#each footer}}
-    <ol class="nav">
-        {{#each this}}
-        <li class="btn btn-link col-2 nav-item nav-link {{#if @last}} disabled{{/if}}">
-            <a href={{link}}>{{text}}</a>
-
-        </li>
+    <ul class="nav">
+        {{#each footer}}
+        <div class="col-2">
+            {{#each this}}
+            <li class="nav-item">
+                <a class="nav-link {{#if @last}} disabled {{/if}}" {{#if @last}} {{else}}href={{link}}
+                    {{/if}}>{{text}}</a>
+            </li>
+            {{/each}}
+        </div>
         {{/each}}
-    </ol>
-    {{/each}}
+    </ul>
 </div>

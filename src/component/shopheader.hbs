@@ -1,9 +1,11 @@
-<div class="card p-3 m-3 text-end">
-    <div clas="nav ">
-        {{#with navigation}}
+{{#with navigation}}
+<div class="card p-1 m-3">
+    <ul class="nav">
         {{#each links}}
-        <a class="nav-item mx-3 " href={{href}}>{{text}}</a>
+        <li class="nav-item">
+            <a class="nav-link  {{#if href}} {{else}} disabled {{/if}}" {{#if href}} href={{href}} {{/if}}>{{text}}</a>
+        </li>
         {{/each}}
-        {{/with}}
-    </div>
+    </ul>
 </div>
+{{/with}}
