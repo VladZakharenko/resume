@@ -1,0 +1,51 @@
+{{> shopheader navigation=navigation}}
+<section class="p-2 m-2">
+
+
+    {{#with header}}
+    <h1 class="my-3">{{title}}</h1>
+    <a type="button" class="btn btn-outline-dark my-3" href={{button.link}}>{{button.text}}</a>
+    {{/with}}
+    <hr class="my-5">
+
+    {{#each goodsBlock}}
+    {{> cardGoodsItem}}
+    {{/each}}
+
+    <hr class="my-5">
+
+    {{#with total}}
+    <h4>{{title}}</h4>
+    <h3>{{amount}}</h3>
+    <p>{{delivery}}</p>
+    {{#each buttons}}
+    <a class="btn my-1 {{#if isSuccess}} btn-success{{/if}} {{#if isOutline}} btn-outline-success{{/if}}"
+        href={{link}}>{{text}}</a> <br>
+    {{/each}}
+    {{/with}}
+
+    <hr class="my-5">
+
+    {{#with goodsOtherBlock}}
+    <h4 class="text-center">{{title}}</h4>
+    {{> shopcard cards=cards}}
+    {{/with}}
+
+    <hr class="my-5">
+
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="card-body">
+            <h2 class="card-title">{{header}}</h2>
+            <p class="card-text">{{description}}</p>
+            {{#each buttons}}
+            <a class="btn btn-primary my-2" href={{link}}>{{text}}</a> <br>
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+
+    <hr class="my-5">
+
+</section>
+{{> shopfooter footer=footer}}
