@@ -8,7 +8,9 @@
     {{/with}}
     <hr class="my-5">
 
-    {{> cardGoodsItem goodsBlock=goodsBlock}}
+    {{#each goodsBlock}}
+    {{> cardGoodsItem}}
+    {{/each}}
 
     <hr class="my-5">
 
