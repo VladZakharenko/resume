@@ -9,10 +9,105 @@ const router = express.Router()
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'basic_total',
+    top: {
+      fio: 'Vlad Zakharenko',
+      projectName: 'Навчальний проект',
+    },
+    navigation: {
+      links: [
+        {
+          text: 'Summary',
+          href: '/summary',
+        },
+        {
+          text: 'Skills',
+          href: '/skills',
+        },
+        {
+          text: 'Education',
+          href: '/education',
+        },
+        {
+          text: 'Work',
+          href: '/work',
+        },
+        {
+          text: 'Person',
+          href: '/person',
+        },
+        {
+          text: 'Bio',
+          href: '/bio',
+        },
+        {
+          text: 'Program',
+          href: '/program',
+        },
+        {
+          text: 'Web',
+          href: '/web',
+        },
+        {
+          text: 'Car',
+          href: '/car',
+        },
+        {
+          text: 'Facebook',
+          href: '/facebook',
+        },
+        {
+          text: 'Task31',
+          href: '/task31',
+        },
+        {
+          text: 'JavaScript',
+          href: '/js',
+        },
+        {
+          text: 'Task21',
+          href: '/task21',
+        },
+        {
+          text: 'Task22',
+          href: '/task22',
+        },
+        {
+          text: 'Shophome',
+          href: '/shophome',
+        },
+        {
+          text: 'Shopproduct',
+          href: '/shopproduct',
+        },
+        {
+          text: 'Shopnews',
+          href: '/shopnews',
+        },
+        {
+          text: 'Shoporder',
+          href: '/shoporder',
+        },
+        {
+          text: 'Shopcart',
+          href: '/shopcart',
+        },
+        {
+          text: 'Shopprofile',
+          href: '/shopprofile',
+        },
+        {
+          text: 'Shopreview',
+          href: '/shopreview',
+        },
+        {
+          text: 'Shopcatalog',
+          href: '/shopcatalog',
+        },
+      ],
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1306,8 +1401,6 @@ router.get('/js', function (req, res) {
     ],
   })
 })
-
-// ================================================================
 
 router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
